@@ -537,7 +537,7 @@ const ChatbotPage = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`w-full max-w-4xl p-6 rounded-2xl shadow-lg ${
+                className={`w-full max-w-7xl p-8 rounded-2xl shadow-lg ${
                 theme === 'dark' ? 'bg-gray-800' : 'bg-white'
               }`}>
                 <h3 className={`text-lg font-semibold mb-4 text-center ${
@@ -545,26 +545,26 @@ const ChatbotPage = () => {
                 }`}>
                   What would you like help with today?
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                   {mentalHealthIssues.map((issue) => (
                     <motion.button
                       key={issue.id}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => startAssessment(issue.id)}
-                      className={`p-5 rounded-xl transition-all duration-200 ${
+                      className={`p-6 rounded-xl transition-all duration-200 ${
                         theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-gray-100'
                       }`}
                     >
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${issue.color} flex items-center justify-center mx-auto mb-3`}>
-                        <issue.icon className="w-6 h-6 text-white" />
+                      <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${issue.color} flex items-center justify-center mx-auto mb-4`}>
+                        <issue.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className={`font-semibold text-base ${
+                      <h4 className={`font-semibold text-lg ${
                         theme === 'dark' ? 'text-white' : 'text-gray-800'
                       }`}>
                         {issue.name}
                       </h4>
-                      <p className={`text-xs mt-1 ${
+                      <p className={`text-sm mt-2 leading-relaxed ${
                         theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
                       }`}>
                         {issue.description}
